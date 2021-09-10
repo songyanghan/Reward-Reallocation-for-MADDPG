@@ -181,9 +181,12 @@ class MADDPGAgentTrainer(AgentTrainer):
         num_sample = 1
         target_q = 0.0
         for i in range(num_sample):
+            shapley_value = self.q_debug['target_q_values'](*(obs_n + act_n))
+            new_rew = rew + self.args.gamma * shapley_value
+#             new_rew = shapley_value
             target_act_next_n = [agents[i].p_debug['target_act'](obs_next_n[i]) for i in range(self.n)]
             target_q_next = self.q_debug['target_q_values'](*(obs_next_n + target_act_next_n))
-            target_q += rew + self.args.gamma * (1.0 - done) * target_q_next
+            target_q += new_rew + self.args.gamma * (1.0 - done) * target_q_next
         target_q /= num_sample
         q_loss = self.q_train(*(obs_n + act_n + [target_q]))
 
