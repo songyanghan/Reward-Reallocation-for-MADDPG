@@ -1,0 +1,4 @@
+Using good policy maddpg and adv policy maddpg
+Starting iterations...
+steps: 24975, episodes: 1000, mean episode reward: -149.95751883877, time: 8.713
+steps: 49975, episodes: 2000, mean episode reward: -166.32053931537894, time: 16.863
