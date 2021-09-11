@@ -1,0 +1,14 @@
+nohup: ignoring input
+2021-09-10 17:55:34.543030: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2021-09-10 17:55:34.574956: E tensorflow/stream_executor/cuda/cuda_driver.cc:397] failed call to cuInit: CUDA_ERROR_UNKNOWN
+2021-09-10 17:55:34.575025: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:163] retrieving CUDA diagnostic information for host: feiNewML
+2021-09-10 17:55:34.575034: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:170] hostname: feiNewML
+2021-09-10 17:55:34.575092: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:194] libcuda reported version is: 470.57.2
+2021-09-10 17:55:34.575128: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:198] kernel reported version is: 470.57.2
+2021-09-10 17:55:34.575136: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:305] kernel version seems to match DSO: 470.57.2
+Traceback (most recent call last):
+  File "train.py", line 193, in <module>
+    train(arglist)
+  File "train.py", line 183, in train
+    with open(rew_file_name, 'wb') as fp:
+FileNotFoundError: [Errno 2] No such file or directory: './learning_curves/sma1_s2_e1_rewards.pkl'
